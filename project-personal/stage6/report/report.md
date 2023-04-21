@@ -1,38 +1,20 @@
 ---
-## Front matter
-title: "Шаблон отчёта по лабораторной работе"
-subtitle: "Простейший вариант"
-author: "Дмитрий Сергеевич Кулябов"
-
-## Generic otions
+# Front matter
 lang: ru-RU
+title: "Индивидуальный проект"
+subtitle: "Этап 6"
+author: "Коршунова Полина"
+
+# Formatting
 toc-title: "Содержание"
-
-## Bibliography
-bibliography: bib/cite.bib
-csl: pandoc/csl/gost-r-7-0-5-2008-numeric.csl
-
-## Pdf output format
 toc: true # Table of contents
-toc-depth: 2
-lof: true # List of figures
-lot: true # List of tables
+toc_depth: 2
 fontsize: 12pt
 linestretch: 1.5
-papersize: a4
+papersize: a4paper
 documentclass: scrreprt
-## I18n polyglossia
-polyglossia-lang:
-  name: russian
-  options:
-	- spelling=modern
-	- babelshorthands=true
-polyglossia-otherlangs:
-  name: english
-## I18n babel
-babel-lang: russian
-babel-otherlangs: english
-## Fonts
+polyglossia-lang: russian
+polyglossia-otherlangs: english
 mainfont: PT Serif
 romanfont: PT Serif
 sansfont: PT Sans
@@ -40,80 +22,81 @@ monofont: PT Mono
 mainfontoptions: Ligatures=TeX
 romanfontoptions: Ligatures=TeX
 sansfontoptions: Ligatures=TeX,Scale=MatchLowercase
-monofontoptions: Scale=MatchLowercase,Scale=0.9
-## Biblatex
-biblatex: true
-biblio-style: "gost-numeric"
-biblatexoptions:
-  - parentracker=true
-  - backend=biber
-  - hyperref=auto
-  - language=auto
-  - autolang=other*
-  - citestyle=gost-numeric
-## Pandoc-crossref LaTeX customization
-figureTitle: "Рис."
-tableTitle: "Таблица"
-listingTitle: "Листинг"
-lofTitle: "Список иллюстраций"
-lotTitle: "Список таблиц"
-lolTitle: "Листинги"
-## Misc options
+monofontoptions: Scale=MatchLowercase
 indent: true
+pdf-engine: lualatex
 header-includes:
-  - \usepackage{indentfirst}
+  - \linepenalty=10 # the penalty added to the badness of each line within a paragraph (no associated penalty node) Increasing the value makes tex try to have fewer lines in the paragraph.
+  - \interlinepenalty=0 # value of the penalty (node) added after each line of a paragraph.
+  - \hyphenpenalty=50 # the penalty for line breaking at an automatically inserted hyphen
+  - \exhyphenpenalty=50 # the penalty for line breaking at an explicit hyphen
+  - \binoppenalty=700 # the penalty for breaking a line at a binary operator
+  - \relpenalty=500 # the penalty for breaking a line at a relation
+  - \clubpenalty=150 # extra penalty for breaking after first line of a paragraph
+  - \widowpenalty=150 # extra penalty for breaking before last line of a paragraph
+  - \displaywidowpenalty=50 # extra penalty for breaking before last line before a display math
+  - \brokenpenalty=100 # extra penalty for page breaking after a hyphenated line
+  - \predisplaypenalty=10000 # penalty for breaking before a display
+  - \postdisplaypenalty=0 # penalty for breaking after a display
+  - \floatingpenalty = 20000 # penalty for splitting an insertion (can only be split footnote in standard LaTeX)
+  - \raggedbottom # or \flushbottom
   - \usepackage{float} # keep figures where there are in the text
   - \floatplacement{figure}{H} # keep figures where there are in the text
 ---
 
 # Цель работы
 
-Здесь приводится формулировка цели лабораторной работы. Формулировки
-цели для каждой лабораторной работы приведены в методических
-указаниях.
-
-Цель данного шаблона --- максимально упростить подготовку отчётов по
-лабораторным работам.  Модифицируя данный шаблон, студенты смогут без
-труда подготовить отчёт по лабораторным работам, а также познакомиться
-с основными возможностями разметки Markdown.
+Сделать поддержу английского и русского языков, разместить элементы на обоих языках, написать два поста. 
 
 # Задание
 
-Здесь приводится описание задания в соответствии с рекомендациями
-методического пособия и выданным вариантом.
+Размещение двуязычного сайта на Github.
 
-# Теоретическое введение
+       Сделать поддержку английского и русского языков.
+       
+       Разместить элементы сайта на обоих языках.
 
-Здесь описываются теоретические аспекты, связанные с выполнением работы.
+       Разместить контент на обоих языках.
 
-Например, в табл. @tbl:std-dir приведено краткое описание стандартных каталогов Unix.
+       Сделать пост по прошедшей неделе.
 
-: Описание некоторых каталогов файловой системы GNU Linux {#tbl:std-dir}
+       Добавить пост на тему по выбору (на двух языках).
 
-| Имя каталога | Описание каталога                                                                                                          |
-|--------------|----------------------------------------------------------------------------------------------------------------------------|
-| `/`          | Корневая директория, содержащая всю файловую                                                                               |
-| `/bin `      | Основные системные утилиты, необходимые как в однопользовательском режиме, так и при обычной работе всем пользователям     |
-| `/etc`       | Общесистемные конфигурационные файлы и файлы конфигурации установленных программ                                           |
-| `/home`      | Содержит домашние директории пользователей, которые, в свою очередь, содержат персональные настройки и данные пользователя |
-| `/media`     | Точки монтирования для сменных носителей                                                                                   |
-| `/root`      | Домашняя директория пользователя  `root`                                                                                   |
-| `/tmp`       | Временные файлы                                                                                                            |
-| `/usr`       | Вторичная иерархия для данных пользователя                                                                                 |
 
-Более подробно об Unix см. в [@gnu-doc:bash;@newham:2005:bash;@zarrelli:2017:bash;@robbins:2013:bash;@tannenbaum:arch-pc:ru;@tannenbaum:modern-os:ru].
+# Выполнение работы
 
-# Выполнение лабораторной работы
+Сначала я выполнила команду ~/bin/hugo server, чтобы получить ссылку на локальный сайт и просматривать там изменения. Затем в директории /home/pykorshunova/work/blog/content создаю директории для двух языков:
 
-Описываются проведённые действия, в качестве иллюстрации даётся ссылка на иллюстрацию (рис. @fig:001).
+![Создание поддиректорий для контента на разных языках.](image/1.png){ #fig:001 width=70% }
 
-![Название рисунка](image/placeimg_800_600_tech.jpg){#fig:001 width=70%}
+В файле config.yaml расположенном в /home/pykorshunova/work/blog/config/_default добавляю поддержание русского языка. И приступаю к добавлению на русском языке той информации, которую мы постепенно добавляли на сайт в течение всего выполнения проекта: биография, интересы, навыки, информацию о достижениях, образовании и другое, проверяя изменения на локальном сайте: 
 
-# Выводы
+![Перевод сегмента сайта «опыт» на русский язык.](image/2.png){ #fig:002 width=70% }
 
-Здесь кратко описываются итоги проделанной работы.
+Также добавляю русскоязычную версию проекта:
 
-# Список литературы{.unnumbered}
+![Добавление русскоязычного проекта на сайт.](image/3.png){ #fig:003 width=70% }
 
-::: {#refs}
-:::
+Затем добавляю русскоязычные версии старых постов, проверяю изменения на локальном сайте:
+
+![Добавление русскоязычной версии одного из старых постов.](image/4.png){ #fig:004 width=70% }
+
+Пишу два поста на двух языках:
+
+Первый пост о прошедшей неделе:
+
+![Создание поста о прошедшей неделе.](image/5.png){ #fig:005 width=70% }
+
+Второй пост на тему «Система инициализации SystemD.»:
+
+![Создание поста на тему «Система инициализации SystemD».](image/6.png){ #fig:006 width=70% }
+
+Затем я выполняю исполняемых файл ~/bin/hugo и отправляю изменения на сервер. Затем, немного подождав, проверяю изменения уже на публичном, а не на локальном, сайте:
+
+![Проверка изменений на публичном сайте.](image/7.png){ #fig:007 width=70% }
+
+# Вывод
+
+В ходе выполнения данного этапа индивидуального проекта я сделала поддержку русского и английского языков на сайте, разместила элементы сайта и контент на обоих языках, а также сделала два поста о прошедшей неделе и о системе инициализации SystemD на двух языках.
+
+
